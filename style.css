@@ -1,0 +1,67 @@
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+thead {
+    background-color: #2C3E50;
+    color: #ecf0f1;
+}
+
+thead th {
+    padding: 16px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #d6eaf8;
+}
+
+tbody tr:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Optional: Add a pointer cursor to header for better UX */
+th {
+    cursor: pointer;
+}
+
+/* Add a subtle animation when clicking */
+tbody tr:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+} 
+
+/* Optional hover effect for headers 
+thead th:hover {
+    background-color: #34495e;
+}
+*/
