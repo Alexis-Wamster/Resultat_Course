@@ -1,4 +1,10 @@
 /* Table Styling */
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -65,3 +71,48 @@ thead th:hover {
     background-color: #34495e;
 }
 */
+
+/*********************************************************************/
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.container p{
+    text-align: left;
+    margin: 20px;
+}
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.carousel {
+    display: flex;
+    width: fit-content;
+}
+.carousel img {
+    width: 25%; /* Affiche environ 4 images à la fois */
+    flex-shrink: 0;
+    transition: transform 0.5s ease-in-out;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
