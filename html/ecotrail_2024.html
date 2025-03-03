@@ -2,28 +2,36 @@
 <html>
     <head>
         <title>Ecotrail 2024</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <!-- Plugin GPX -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+        <!-- Courbe -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
         <div class="container" id="ecotrail_2024"> <!--ECOTRAIL 2024 -->
             <h1>L'ecotrail 2024</h1>
             <div class="carousel-container">
                 <div class="carousel">
-                    <img src="../src/ecotrail_2024/depart.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cw_15km_foret.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cw_20km_foret.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cw_25km_foret.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cote_40km.jpg" alt="Image">         
-                    <img src="../src/ecotrail_2024/cw_45km_foret.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/escalier_50km.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cote_55km.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/selfie_55km.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/arrivee_willy.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/arrivee_willy2.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cw_bord_de_seine.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/cw_escalier_tour_effeil.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/arrivee_alexis.jpg" alt="Image">
-                    <img src="../src/ecotrail_2024/arrivee_alexis_2.jpg" alt="Image">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0lKRtCzF2Oe7P7bw?embed=1&width=1536&height=2048" alt="depart">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0d8_O2SpExoIiQ5Q?embed=1&width=200&height=300" alt="cw_15km_foret">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0cbcph7ieHzp1Qfw?embed=1&width=200&height=300" alt="cw_20km_foret">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0b9K-9ELwDKLi3Ew?embed=1&width=200&height=300" alt="cw_25km_foret">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0nBKREhAXFe0LY4g?embed=1&width=1536&height=2048" alt="cote_40km">         
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0ZtTUNDBklNnvHjg?embed=1&width=200&height=300" alt="cw_45km_foret">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0hvBSIq_uiis-MCg?embed=1&width=1536&height=2048" alt="escalier_50km">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0mC_6BONI_mVMBmg?embed=1&width=1200&height=1600" alt="cote_55km">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0f2Urv0SKN8EvL7w?embed=1&width=2048&height=1536" alt="selfie_55km">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0ikzywkr0YSjfWWA?embed=1&width=1496&height=2000" alt="arrivee_willy">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0gJtUAaV47zyQWUw?embed=1&width=1200&height=1600" alt="arrivee_willy2">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0YqNCVkIRPNHVdfQ?embed=1&width=200&height=300" alt="cw_bord_de_seine">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0X_FtcxxIBm9a28g?embed=1&width=200&height=300" alt="cw_escalier_tour_effeil">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0jywx2z3OfdFiFdw?embed=1&width=1496&height=2000" alt="Arrivee_alexis">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0kZ6SELy4RgbAh-A?embed=1&width=1200&height=1600" alt="arrivee_alexis_2">
                     
                 </div>
             </div>
@@ -57,9 +65,14 @@
                 Je finis donc en 9h40. mon frère a finis en 7h40 et mon père, sans blessure, l'aurait bouclé en 6h40.
                 Conclusion: c'est mieux d'être entrainé (mais sans entrainement, ça se tente quand même).
             </p>
-            <img src="../src/ecotrail_2024/profile_de_course.png" alt="profile de course"><br>
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+<canvas id="elevationChart" width="400" height="130"></canvas>
+
             <a href="../src/ecotrail_2024/2024_ecotrail.pdf" class="btn" target="_blank">Résultat</a>
         </div>
     </body>
-    <script src="../script.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../script.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../gpx.js"></script>
+    <script>loadGPX('../src/ecotrail_2024/trace.gpx')</script>
 </html>
