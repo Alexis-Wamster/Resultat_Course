@@ -2,34 +2,40 @@
 <html>
     <head>
         <title>Marathon Rochelle 2023</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /><!-- Leaflet -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script><!-- Leaflet -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script><!-- Plugin GPX -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!-- Courbe -->
     </head>
     <body>
         <div class="container">
             <h1>Marathon de La Rochelle 2023</h1>
             <div class="carousel-container">
                 <div class="carousel">
-                    <img src="../src/marathon-la-rochelle_2023/la_rochelle1.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/la_rochelle2.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/parcours.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/h-13.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/pasta_party.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/depart.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/depart2.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_willy1.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_willy2.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_willy3.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_david.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_willy4.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_alexis.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_course_willy5.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_arrivee_willy.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/arrivee_willy.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_arrivee_david.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/cw_arrivee_alexis.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/arrivee1.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/arrivee2.jpg" alt="Image">
-                    <img src="../src/marathon-la-rochelle_2023/repas_post_course.jpg" alt="Image">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis04Jn7YiJYsiBFLiQ?embed=1&width=2048&height=1536" alt="la_rochelle1">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis03-jtx_tM0fox69g?embed=1&width=1296&height=972" alt="la_rochelle2">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis02cHbF7OwfBnftHQ?embed=1&width=2048&height=1536" alt="parcours">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1GmSLue8scMkP-CA?embed=1&width=1536&height=2048" alt="h-13">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis01lTEDv-cD-ch1iw?embed=1&width=1296&height=972" alt="pasta_party">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1FLaaXrF60pmp2Rw?embed=1&width=1536&height=2048" alt="depart">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1KE6w4JZjo0W_irg?embed=1&width=2048&height=1536" alt="depart2">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0-o0BwhtHlDjFyPA?embed=1&width=200&height=300" alt="cw_course_willy1">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis09V8lKO24H7UTwzw?embed=1&width=200&height=300" alt="cw_course_willy2">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0871oTpeQWykqMNQ?embed=1&width=300&height=200" alt="cw_course_willy3">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0_OPS_F8xSbhHYuA?embed=1&width=200&height=300" alt="cw_course_david">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis07meYsiNUrbN36cw?embed=1&width=200&height=300" alt="cw_course_willy4">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1AIF69HD0SKgkWyw?embed=1&width=200&height=300" alt="cw_course_alexis">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis06sMO9vnkSSbYJ9A?embed=1&width=200&height=300" alt="cw_course_willy5">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1Bt_YKRuoSCjY9HQ?embed=1&width=300&height=200" alt="cw_arrivee_willy">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1J6yYr7B6rrf5RLA?embed=1&width=1536&height=2048" alt="arrivee_willy">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1CPUUUxPrbsvOQNw?embed=1&width=200&height=300" alt="cw_arrivee_david">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1E1j1bxdUrdoRa1A?embed=1&width=200&height=300" alt="cw_arrivee_alexis">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1Hs99TTb6DAC7jkA?embed=1&width=2048&height=1536" alt="arrivee1">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis1ITD8qPDxy7CKhkA?embed=1&width=2048&height=1536" alt="arrivee2">
+                    <img src="https://1drv.ms/i/s!AmFu5GLbWOqpis0yzjyEaYckCJ4o3Q?embed=1&width=1296&height=972" alt="repas_post_course">
                 </div>
             </div>
             <p>
@@ -64,8 +70,14 @@
                 Je finis finalement le deuxième semi en 30 minutes de plus que le premier (1h30+2h=3h30).
                 Je retrouve mon père et mon frère qui ont fait respectivement 3h et 3h08.
             </p>
-            <a href="../src/marathon-la-rochelle_2023/marathon_la_rochelle_2023.pdf" class="btn" target="_blank">Résultat</a>
+
+            <div id="map" style="width: 100%; height: 400px;"></div>
+            <canvas id="elevationChart" width="400" height="130"></canvas>
+
+            <a href="../src/marathon-la-rochelle_2023/resultat.pdf" class="btn" target="_blank">Résultat</a>
         </div>
     </body>
-    <script src="../script.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../script.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../gpx.js"></script>
+    <script>loadGPX('../src/marathon-la-rochelle_2023/trace.gpx')</script>
 </html>
